@@ -1,5 +1,6 @@
 <main>
-<app-navbar></app-navbar>
+
+  <app-navbar></app-navbar>
 
     <div class="addContent">
         <p>Add an URL</p>
@@ -10,9 +11,9 @@
             </div>
             <div class="url">
                 <label for="urlInput">URL : </label>
-                <input type="text" id="urlInput" [(ngModel)]="url.url" name="url">
+                <input type="text" id="urlInput" [(ngModel)]="url.url" name="url" required>
             </div>
-            <input type="submit" value="Save URL" class="submit" required>
+            <input type="submit" value="Save URL" class="submit">
         </form>
     </div>
 

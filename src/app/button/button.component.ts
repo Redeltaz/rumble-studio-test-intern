@@ -9,7 +9,7 @@ import { CdkDragEnd } from '@angular/cdk/drag-drop';
 export class ButtonComponent implements OnInit {
 
   buttonPosition;
-  isPay: boolean = false
+  emitting: boolean = false
   buttonText: string = 'Pay'
 
   constructor() { }
@@ -20,11 +20,11 @@ export class ButtonComponent implements OnInit {
   dragEnd($event: CdkDragEnd){
     this.buttonPosition = $event.source.getFreeDragPosition()
     if(this.buttonPosition.y <= -95){
-      this.isPay = true;
+      this.emitting = true;
       this.buttonText = 'Done !'
       setTimeout(() => {
         alert('The payment has been made !')
-        this.isPay = false;
+        this.emitting = false;
         this.buttonText = 'Pay'
         $event.source._dragRef.reset();//reset the position of the dragged element
       },2000)//set a little timer to give a processing request impression

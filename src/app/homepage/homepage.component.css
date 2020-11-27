@@ -1,6 +1,11 @@
+/* *{
+    border: 3px solid red;
+} */
+
 main{
     height: 100%;
     z-index: 0;
+    padding: 0 10px;
 }
 
 .title{
@@ -17,13 +22,12 @@ main{
 
 .content{
     position: relative;
-    margin-right: 10px;
-    margin-left: 10px;
+    max-width: 400px;
 }
 
 .cardContainer{
     position: relative;
-    margin: 40px 50px 0 40px;
+    margin: 40px 40px 0 40px;
     z-index: 1;
 }
 
@@ -31,10 +35,11 @@ main{
     position: absolute;
     top: 0;
     width: 100%;
+    max-width: 275px;
     background-image: url('../../assets/img/backgroundCard.JPG');
     background-size: cover;
     border-radius: 35px;
-    height: 50vh;
+    height: 380px;
     padding-top: 30px;
 } 
 
@@ -61,11 +66,12 @@ main{
     right: 30px;
 }
 
-.underCard{
+.cardShadow{
     background-color: #cecccd;
-    height: 53vh;
+    height: 410px;
+    max-width: 275px;
     border-radius: 35px;
-    transform: rotate(3deg);
+    transform: rotate(4deg);
 }
 
 .cardContainer div:first-child p {

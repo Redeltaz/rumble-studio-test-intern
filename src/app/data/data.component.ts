@@ -25,11 +25,13 @@ export class DataComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.url.name != '' && this.url.url != ''){
-      this.savedUrlService.setUrl(this.url);
-      this.url.name = '';
-      this.url.url = '';
-    }
+    setTimeout(() => {
+      if(this.url.name != '' && this.url.url != ''){
+        this.savedUrlService.setUrl(this.url);
+        this.url.name = '';
+        this.url.url = '';
+      }
+    },1000)//add a timeout to give impression of a processing request
   }
 
   deleteUrl(event, url){

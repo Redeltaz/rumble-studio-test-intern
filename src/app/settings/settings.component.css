@@ -1,0 +1,19 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.time{
+    display: flex;
+}
+
+.time input{
+    width: 30px;
+    height: 15px;
+}
