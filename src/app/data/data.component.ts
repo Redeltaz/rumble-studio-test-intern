@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SavedUrlsService } from '../services/saved-urls.service';
+import { Url } from '../interfaces/url';
 
 @Component({
   selector: 'app-data',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data.component.css']
 })
 export class DataComponent implements OnInit {
+  urls: Url[];
 
-  constructor() { }
+  constructor(private savedUrlService: SavedUrlsService) { }
 
   ngOnInit(): void {
+    this.savedUrlService.getUrl().subscribe(urls => {
+      console.log(urls)
+      this.urls = urls;
+    });
   }
 
 }

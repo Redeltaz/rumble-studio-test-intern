@@ -23,7 +23,7 @@ export class HomepageComponent implements OnInit {
     }else {
       return 'block'
     }
-  }
+  }//by checking the value of isNav, the function hide or display the navbar
 
   navClick():void {
     if(this.isNav === false){
@@ -31,6 +31,6 @@ export class HomepageComponent implements OnInit {
     }else{
       this.isNav = false
     }
-  }
+  }//change the bool variable to know if the navbar is open or close
 
 }

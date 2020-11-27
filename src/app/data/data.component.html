@@ -1,1 +1,18 @@
-<p>data works!</p>
+<main>
+  <nav>
+    <a routerLink="/homepage">Homepage</a>
+    <a routerLink="/data">Data</a>
+    <a routerLink="/settings">Settings</a>
+  </nav>
+
+  <div *ngIf="urls?.length > 0;else noUrl" class="urlListe">
+    <ul *ngFor="let url of urls">
+        <li class="urlItem">{{ url.name }} : <a href="{{ url.url }}" target="_blank">{{ url.url }}</a></li>
+    </ul>
+  </div>
+
+  <ng-template #noUrl>
+    <hr>
+    <p>You have 0 urls saved</p>
+  </ng-template>
+</main>
