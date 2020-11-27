@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'data', component: DataComponent },
-]
+]//route assignement
 
 @NgModule({
   declarations: [],

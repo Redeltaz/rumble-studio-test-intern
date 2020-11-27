@@ -1,0 +1,134 @@
+main{
+    background-color: #ecf3fb;
+    height: 100%;
+    z-index: 0;
+}
+
+.fas{
+    background-color: #ffffff;
+    padding: 20px 30px 20px 25px;
+    border-radius: 20px;
+    margin: 0 15px 0 20px;
+}
+
+nav{
+    display: flex;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+nav a{
+    color: #000000;
+    text-decoration: none;
+}
+
+.link{
+    display: none;
+    background-color: #ffffff;
+    padding-top: 25px;
+    padding-left: 10px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.link a{
+    margin-right: 15px;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+    margin: 30px 0 0 30px;
+}
+
+.title span{
+    color: #62676b;
+    font-weight: normal;
+}
+
+.content{
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.cardContainer{
+    position: relative;
+    margin: 40px 50px 0 40px;
+    z-index: 1;
+}
+
+.card{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-image: url('../../assets/img/backgroundCard.JPG');
+    background-size: cover;
+    border-radius: 35px;
+    height: 50vh;
+    padding-top: 30px;
+} 
+
+.card p{
+    color: #ffffff;
+    margin-left: 30px;
+}
+
+.cardTop{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pins{
+    width: 50px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.visa{
+    width: 90px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.underCard{
+    background-color: #cecccd;
+    height: 53vh;
+    border-radius: 35px;
+    transform: rotate(3deg);
+}
+
+.cardContainer div:first-child p {
+    color: #ffffff;
+    margin-left: 30px;
+    font-size: 17px;
+}
+
+.payment{
+    position: absolute;
+    top: 250px;
+    z-index: 0;
+    width: 100%;
+    padding-top: 250px;
+    background-color: #ffffff;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.payment p {
+    margin-left: 40px;
+}
+
+.payment p:nth-child(odd){
+    color: #959595;
+    font-size: 18px;
+    margin-bottom: -5px;
+}
+
+.payment p:nth-child(even){
+    color: #000000;
+    font-size: 25px;
+    font-weight: bold;
+}

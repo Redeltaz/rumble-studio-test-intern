@@ -1,1 +1,35 @@
-<p>homepage works!</p>
+<main>
+  <nav>
+    <i class="fas fa-angle-left fa-2x" (click)="navClick()"></i>
+    <div class="link" [ngStyle]="{display: navStatus()}">
+      <a routerLink="/homepage">Homepage</a>
+      <a routerLink="/data">Data</a>
+      <a routerLink="/settings">Settings</a>
+    </div>
+  </nav>
+
+
+  <p class="title">Choose Your <br><span>Card And Pay</span></p>
+
+  <div class="content">
+    <div class="cardContainer">
+      <div class="underCard"></div>
+      <div class="card">
+        <div class="cardTop">
+          <div>
+            <p>**** 2584</p>
+            <p>John Smith</p>
+          </div>
+          <div><img [src]="Pins" alt="pins" class="pins"></div>
+        </div>
+        <img [src]="VisaLogo" alt="logo Visa" class="visa">
+      </div>
+    </div>
+    <div class="payment">
+      <p>Duration</p>
+      <p>3 Hours</p>
+      <p>Total</p>
+      <p>$ 260</p>
+    </div>
+  </div>
+</main>
