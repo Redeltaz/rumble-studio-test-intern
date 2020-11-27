@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -13,6 +15,7 @@ import { ButtonComponent } from './button/button.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { SavedUrlsService } from './services/saved-urls.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,16 @@ import { SavedUrlsService } from './services/saved-urls.service';
     HomepageComponent,
     DataComponent,
     SettingsComponent,
-    ButtonComponent
+    ButtonComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    DragDropModule
   ],
   providers: [SavedUrlsService],
   bootstrap: [AppComponent]

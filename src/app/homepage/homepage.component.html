@@ -1,15 +1,6 @@
 <main>
-  <nav>
-    <i class="fas fa-angle-left fa-2x" (click)="navClick()"></i>
-    <!-- change the style by clicking in the button -->
-    <div class="link" [ngStyle]="{display: navStatus()}">
-      <!-- the style change according to what the function return -->
-      <a routerLink="/homepage">Homepage</a>
-      <a routerLink="/data">Data</a>
-      <a routerLink="/settings">Settings</a>
-    </div>
-  </nav>
-
+  
+  <app-navbar></app-navbar>
 
   <p class="title">Choose Your <br><span>Card And Pay</span></p>
 
@@ -32,6 +23,7 @@
       <p>3 Hours</p>
       <p>Total</p>
       <p>$ 260</p>
+      <app-button></app-button>
     </div>
   </div>
 </main>

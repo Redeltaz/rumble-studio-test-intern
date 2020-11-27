@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CdkDragEnd } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-button',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
+  buttonPosition;
+  isPay: boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  dragEnd($event: CdkDragEnd){
+    this.buttonPosition = $event.source.getFreeDragPosition()
+    if(this.buttonPosition.y <= -90){
+      console.log("salut")
+    }
   }
 
 }

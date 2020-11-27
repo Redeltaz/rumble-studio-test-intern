@@ -1,0 +1,73 @@
+.buttonContainer {
+  background-color: #f0f3fa;
+  position: absolute;
+  top: 57%;
+  right: 18%;
+  border-radius: 20px;
+  height: 150px;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.arrow {
+  position: relative;
+  text-align: center;
+  margin: 0 10px 10px 0;
+}
+
+.fas {
+  position: absolute;
+  transform: rotate(90deg);
+  top: 0;
+}
+
+.arrow i:first-child{
+    animation: arrow1Color 3s infinite;
+    color: #000000;
+}
+
+.arrow i:nth-child(3){
+    top: 10px;
+    animation: arrow2Color 3s infinite;
+    color:  #888b90;
+}
+
+.arrow :last-child{
+    top: 19px;
+    animation: arrow3Color 3s infinite;
+    color: #d6d9de;
+}
+
+.button{
+    background-color: #000000;
+    border-radius: 20px;
+    color: #ffffff;
+    height: 50px;
+    text-align: center;
+}
+
+.button p{
+    font-size: 12px;
+    padding-top: 14px;
+}
+
+@keyframes arrow1Color{
+    0% {color: #000000;}
+    50% {color:  #888b90;}
+    100% {color: #d6d9de;}
+}
+
+@keyframes arrow2Color{
+    0% {color:  #888b90;}
+    50% {color: #d6d9de;}
+    100% {color: #000000;}
+}
+
+@keyframes arrow3Color{
+    0% {color: #d6d9de;}
+    50% {color: #000000;}
+    100% {color:  #888b90;}
+}
+

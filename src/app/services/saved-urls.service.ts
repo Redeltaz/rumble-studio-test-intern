@@ -11,9 +11,13 @@ import { map } from 'rxjs/operators';
 export class SavedUrlsService {
   urlCollection: AngularFirestoreCollection<Url>;
   url: Observable<Url[]>;
+  urlDoc: AngularFirestoreDocument<Url>;
 
   constructor(public afs: AngularFirestore) {
-    this.url = this.afs.collection('savedUrls').snapshotChanges().pipe(
+
+    this.urlCollection = this.afs.collection('savedUrls', ref => ref.orderBy('name', 'asc'));
+
+    this.url = this.urlCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Url;
         const id = a.payload.doc.id;
@@ -23,10 +27,20 @@ export class SavedUrlsService {
     //pass to url an array of all our already saved url
   }
 
-   getUrl(){
-     return this.url;
-     //simple getter function
-   }
+  getUrl(){
+    return this.url;
+    //simple getter function
+  }
+
+  setUrl(url: Url){
+    this.urlCollection.add(url);
+    //simple setter function
+  }
+
+  deleteUrl(url: Url){
+    this.urlDoc = this.afs.doc(`savedUrls/${url.id}`);
+    this.urlDoc.delete();
+  }
 }
 
 // https://stackoverflow.com/questions/52471489/angular-6-observable-explanation-in-plain-english
