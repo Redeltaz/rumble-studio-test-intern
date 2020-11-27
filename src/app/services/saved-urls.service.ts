@@ -40,6 +40,7 @@ export class SavedUrlsService {
   deleteUrl(url: Url){
     this.urlDoc = this.afs.doc(`savedUrls/${url.id}`);
     this.urlDoc.delete();
+    //delete the selected document in firestore
   }
 }
 

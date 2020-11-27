@@ -10,6 +10,7 @@ export class ButtonComponent implements OnInit {
 
   buttonPosition;
   isPay: boolean = false
+  buttonText: string = 'Pay'
 
   constructor() { }
 
@@ -18,9 +19,18 @@ export class ButtonComponent implements OnInit {
 
   dragEnd($event: CdkDragEnd){
     this.buttonPosition = $event.source.getFreeDragPosition()
-    if(this.buttonPosition.y <= -90){
-      console.log("salut")
+    if(this.buttonPosition.y <= -95){
+      this.isPay = true;
+      this.buttonText = 'Done !'
+      setTimeout(() => {
+        alert('The payment has been made !')
+        this.isPay = false;
+        this.buttonText = 'Pay'
+        $event.source._dragRef.reset();//reset the position of the dragged element
+      },2000)//set a little timer to give a processing request impression
     }
-  }
-
+  }//if the position of the button is near the end (95~100%) isPay become true
 }
+
+//https://stackoverflow.com/questions/54449939/how-to-get-the-position-after-drop-with-cdkdrag
+//to understand how cdk drag and drop position work
