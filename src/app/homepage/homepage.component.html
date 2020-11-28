@@ -2,27 +2,31 @@
 
   <app-navbar></app-navbar>
 
-  <p class="title">Choose Your <br><span>Card And Pay</span></p>
+  <header>
+    <p>Choose Your <br><span>Card And Pay</span></p>
+  </header>
 
-  <div class="content">
-    <div class="cardContainer">
-      <div class="cardShadow"></div>
-      <div class="card">
-        <div class="cardTop">
-          <div>
-            <p>**** 2584</p>
-            <p>John Smith</p>
-          </div>
-          <div><img [src]="Pins" alt="pins" class="pins"></div>
+  <div class="cardContainer">
+    <div class="card">
+      <div class="cardTop">
+        <div>
+          <p>**** 2584</p>
+          <p>John Smith</p>
         </div>
-        <img [src]="VisaLogo" alt="logo Visa" class="visa">
+        <div><img [src]="Pins" alt="pins" class="pins"></div>
       </div>
+      <div class="cardBottom"><img [src]="VisaLogo" alt="logo Visa" class="visa"></div>
     </div>
+    <div class="cardShadow"></div>
+  </div>
+  <div class="content">
     <div class="payment">
       <p>Duration</p>
       <p>3 Hours</p>
       <p>Total</p>
       <p>$ 260</p>
+    </div>
+    <div class="button">
       <app-button></app-button>
     </div>
   </div>
