@@ -25,9 +25,11 @@ export class ButtonComponent implements OnInit {
       setTimeout(() => {
         alert('The payment has been made !')
         this.emitting = false;
-        this.buttonText = 'Pay'
+        this.buttonText = 'Pay';
         $event.source._dragRef.reset();//reset the position of the dragged element
       },2000)//set a little timer to give a processing request impression
+    }else {
+      $event.source._dragRef.reset();
     }
   }//if the position of the button is near the end (95~100%) isPay become true
 }
