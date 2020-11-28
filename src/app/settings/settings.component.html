@@ -3,12 +3,12 @@
     <app-navbar></app-navbar>
 
     <div class="content">
-        <audio controls [src]="podcast">
+        <audio controls [src]="podcast" id="audio">
         </audio>
     </div>
 
     <div class="addContent">
-        <p>Add a Timestamp</p>
+        <p class="title">Add a Timestamp</p>
         <form (ngSubmit)="onSubmit()">
             <div class="name">
                     <label for="nameInput">Name : </label>
@@ -20,17 +20,17 @@
                 <p>:</p>
                 <input type="number" id="timeInput" name="url" placeholder="sec" [(ngModel)]="timeForm.sec">
             </div>
-            <input type="submit" value="Add a timestamp" class="submit" required>
+            <input type="submit" value="Add to the liste" class="submit" required>
         </form>
     </div>
 
     <div *ngIf="times?.length > 0;else noTimestamp" class="timeListe">
         <ul *ngFor="let time of times">
-            <li class="timeItem">{{ time.name }} : <p (click)="updateTime(time.timeSec)">{{ time.timeDisplay }}</p><i class="fas fa-trash-alt" (click)="deleteTime($event, time)"></i></li>
+            <li class="timeItem">{{ time.name }} : <p (click)="updateAudioTime(time.timeSec)">{{ time.timeDisplay }}</p><i class="fas fa-trash-alt" (click)="deleteTime($event, time)"></i></li>
         </ul>
     </div>
 
     <ng-template #noTimestamp>
-        <p>No timestamp added to this audio</p>
+        <p class="noTimestamp">No timestamp added to this audio</p>
     </ng-template>
 </main>

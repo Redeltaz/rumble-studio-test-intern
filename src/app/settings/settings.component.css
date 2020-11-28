@@ -1,19 +1,77 @@
-main{
-    display: flex;
-    flex-direction: column;
+main {
+  display: flex;
+  flex-direction: column;
 }
 
-.content{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-.time{
-    display: flex;
+.addContent {
+  background-color: #ffffff;
+  border-radius: 25px;
+  margin: 20px 10px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.time input{
-    width: 30px;
-    height: 15px;
+.title {
+  text-decoration: underline;
+}
+
+.name input {
+  margin-bottom: 15px;
+  border-radius: 7px;
+}
+
+.time input {
+  border-radius: 7px;
+}
+
+.time {
+  display: flex;
+}
+
+.time input {
+  width: 30px;
+  height: 15px;
+}
+
+.submit {
+  margin-left: 55px;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+.timeListe {
+  background-color: #ffffff;
+  border-radius: 25px;
+  margin: 0 10px;
+}
+
+li {
+  display: flex;
+}
+
+li p {
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.fas {
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+.noTimestamp {
+  margin-left: 10px
+}
+
+#timeInput {
+  margin: 0 5px;
 }

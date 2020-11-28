@@ -10,7 +10,9 @@ import { TimeForm } from '../interfaces/time';
 })
 export class SettingsComponent implements OnInit {
 
-  podcast: any = "assets/audio/advice-web-podcast.mp3"
+  podcast: string = "assets/audio/advice-web-podcast.mp3"
+
+  audio: any;
 
   times: Time[];
   time: Time = {
@@ -23,9 +25,12 @@ export class SettingsComponent implements OnInit {
     sec: 0
   }
 
-  constructor(private savedTimestampService: SavedTimestampService) { }
+  constructor(private savedTimestampService: SavedTimestampService) {
+   }
 
   ngOnInit(): void {
+      this.audio = <HTMLAudioElement>document.getElementById("audio")
+
       this.savedTimestampService.getTime().subscribe(times => {
         this.times = times;
       });
@@ -40,18 +45,23 @@ export class SettingsComponent implements OnInit {
       
       this.time.timeSec = this.timeForm.min * 60 + this.timeForm.sec;
 
-      if(this.time.name != '' && this.time.timeDisplay != ''){
+      if(this.time.name != '' && this.time.timeSec < this.audio.duration){
         this.savedTimestampService.setTime(this.time);
         this.time.name = '';
-      }
+        this.timeForm.min = 0;
+        this.timeForm.sec = 0;
+      }//we check if the form is not empty and if the timestamp returned by the user is lower than the audio lentgh
   }
 
   deleteTime(event, time){
     this.savedTimestampService.deleteTime(time);
   }
 
-  updateTime(time){
-    console.log(time)
+  updateAudioTime(time){
+    this.audio.currentTime = time
   }
 
 }
+
+//https://stackoverflow.com/questions/47981884/extracting-audio-file-duration-from-a-url
+//One of the answer help me to understand why I could'nt get the audio directly in the constructor
