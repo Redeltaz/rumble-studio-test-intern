@@ -4,7 +4,7 @@ Rumble Studio intern test project using Angular and Firebase.
 
 ## Running project
 
-First clone the project, then run `ng serve`<br><br>
+First clone the project, then run `ng serve`<br>
 
 You can now see the project in `http://localhost:4200/`.<br>
 
